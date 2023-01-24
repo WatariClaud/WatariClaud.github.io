@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+*:focus {
+    outline: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    background-color: aliceblue;
+    overflow-x: hidden;
+}
+#top::before, #mid::before, #mid-next-after::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    background-attachment: fixed;
+    z-index: -1;
+}
+h1, h2, h3, h4, h5 p {
+    color: rgb(56, 56, 56);
+}
+#top::before {
+    background-image: url('../images/claud7.png');
+}
+#mid::before {
+    background-image: url('../images/claud3.png');
+}
+#mid-next-after::before {
+    background-image: url('../images/claud9.png');
+}
+#top, #mid, #mid-next, #mid-next-after {
+    position: relative;
+    min-width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+#top {
+    padding-top: 20vh;
+}
+#mid, #mid-next, #mid-next-after {
+    padding-top: 15vh;
+}
+#top h1 {
+    font-size: 5rem;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+#top .section, #mid .section, #mid-next .section, #mid-next-after .section {
+    max-width: 74%;
+    padding: 3rem 1rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+#mid-next .section {
+    max-width: 90%;
+    background-color: rgba(251, 229, 196, 0.4);
+}
+#top .section p, #mid .section p, #mid-next .section p, #mid-next-after .section p {
+    width: 100%;
+}
+#top .section p {
+    font-size: 1.5rem;
+}
+#mid .section p, #mid-next .section p {
+    font-size: 1.1rem;
+}
+.primary-btn {
+    text-decoration: none;
+    padding: .7rem 2rem;
+    font-size: 1rem;
+    border: 1px solid rgb(142, 142, 254);
+    background-color: rgb(142, 142, 254);
+    border-radius: 11px;
+    opacity: 0.9;
+    cursor: pointer;
+    margin: 1rem  2rem;
+}
+.primary-btn:hover {
+    opacity: 1;
+}
+.gallery-row {
+    display: inline-block;
+}
+.img {
+    display: inline-block;
+    max-width: 340px;
+    max-height: 430px;
+    cursor: pointer;
+    width: 32%;
+}
+.img:hover {
+    width: 32.5%;
+    max-width: 345px;
+    max-height: 435px;
+}
+#bottom {
+    width: 100vw;
+    margin:0 auto;
+    padding: 2rem;
+    background-color: rgb(50, 50, 50);
+}
+#bottom p {
+    line-height: 300%;
+    color: rgb(255, 255, 255);
+}
+#bottom a {
+    color: inherit;
+}
+.portfolio-item {
+    display: inline-block;
+    width: 30%;
+    padding: 1rem;
+    border-radius: 11px;
+    cursor: pointer;
+    margin: 1rem 2rem;
+    opacity: 0.7;
+}
+.item-title, .item-description {
+    color: rgb(255, 255, 255);
+    font-size: .8rem;
+}
+.item-title {
+    font-weight: 800;
+}
