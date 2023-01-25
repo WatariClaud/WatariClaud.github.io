@@ -63,4 +63,7 @@
     .img-h {
         display: none;
     }
+    #loading {
+        font-size: 1rem;
+    }
 }

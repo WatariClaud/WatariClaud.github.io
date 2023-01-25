@@ -126,7 +126,7 @@
             "image": "blank"
         },
     ];
-    if(projects.length === 0) return projects_div.innerHTML = `<div class = 'portfolio-item'><p>No projects available</p></div`
+    if(projects.length === 0) return projects_div.innerHTML = `<div class = 'portfolio-item'><p>No projects available</p></div`;
     for(let project = 0; project < projects.length; project++) {
         if(project === 3) {
             item = document.createElement('button');
@@ -149,7 +149,7 @@
     });
     collapse_top.addEventListener('click', () => {
         if(top.style.display === 'block') {
-            document.querySelector('#top-msg').textContent = 'Expand section';
+            document.querySelector('#top-msg').textContent = 'Expand top section';
             document.querySelector('#top-msg').style.display = 'block';
             document.querySelector('#top-msg').style.height = '60px';
             document.querySelector('#top-msg').style.borderBottom = '1px solid gray';
@@ -164,7 +164,7 @@
     });
     collapse_mid.addEventListener('click', () => {
         if(mid.style.display === 'block') {
-            document.querySelector('#mid-msg').textContent = 'Expand section';
+            document.querySelector('#mid-msg').textContent = 'Expand info section';
             document.querySelector('#mid-msg').style.display = 'block';
             document.querySelector('#mid-msg').style.height = '60px';
             document.querySelector('#mid-msg').style.borderBottom = '1px solid gray';
@@ -179,7 +179,7 @@
     });
     collapse_mid_next.addEventListener('click', () => {
         if(mid_next.style.display === 'block') {
-            document.querySelector('#mid-next-msg').textContent = 'Expand section';
+            document.querySelector('#mid-next-msg').textContent = 'Expand gallery section';
             document.querySelector('#mid-next-msg').style.display = 'block';
             document.querySelector('#mid-next-msg').style.height = '60px';
             document.querySelector('#mid-next-msg').style.borderBottom = '1px solid gray';
@@ -194,7 +194,7 @@
     });
     collapse_mid_next_after.addEventListener('click', () => {
         if(mid_next_after.style.display === 'block') {
-            document.querySelector('#mid-next-after-msg').textContent = 'Expand section';
+            document.querySelector('#mid-next-after-msg').textContent = 'Expand projects section';
             document.querySelector('#mid-next-after-msg').style.display = 'block';
             document.querySelector('#mid-next-after-msg').style.height = '60px';
             document.querySelector('#mid-next-after-msg').style.borderBottom = '1px solid gray';
@@ -212,7 +212,7 @@
         new_sector.setAttribute('id', 'placeholder');
         new_sector.style.height = '100px';
         if(bottom.style.display === 'block') {
-            document.querySelector('#bottom-msg').textContent = 'Expand section';
+            document.querySelector('#bottom-msg').textContent = 'Expand contacts section';
             document.querySelector('#bottom-msg').style.display = 'block';
             document.querySelector('#bottom-msg').style.height = '60px';
             document.querySelector('#bottom-msg').style.borderBottom = '1px solid gray';
