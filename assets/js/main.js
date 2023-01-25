@@ -115,26 +115,27 @@
             "description": "Backend service for a car booking application written in python. Runs on postgres. Currently under development",
             "image": "blank"
         },
-        // {
-        //     "title": "Quick Credit",
-        //     "description": "Mobile loan application built for the Andela bootcamp challenge, back in 2019",
-        //     "image": "blank"
-        // },
-        // {
-        //     "title": "Teamwork",
-        //     "description": "Employee social site built for the BuildForSDG program by Andela and Google Africa",
-        //     "image": "blank"
-        // }
+        {
+            "title": "Quick Credit",
+            "description": "Mobile loan application built for the Andela bootcamp challenge, back in 2019",
+            "image": "blank"
+        },
+        {
+            "title": "Teamwork",
+            "description": "Employee social site built for the BuildForSDG program by Andela and Google Africa",
+            "image": "blank"
+        },
     ];
     if(projects.length === 0) return projects_div.innerHTML = `<div class = 'portfolio-item'><p>No projects available</p></div`
     for(let project = 0; project < projects.length; project++) {
-        if(project === 4) {
+        if(project === 3) {
             item = document.createElement('button');
             item.setAttribute('onclick', 'view_more()');
             item.setAttribute('class', 'primary-btn');
             item.textContent = 'More';
             let br = document.createElement('br');
             projects_div.append(br, item);
+            mid_next_after.style.height = mid_next_after.style.height.split('vh')[0] + '60px';
             break
         };
         item = document.createElement('div');

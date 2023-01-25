@@ -1,11 +1,47 @@
-@media screen and (min-width = "920px") {
+@media screen and (max-width: 920px){
     #top h1 {
         font-size: 4rem;
     }
+    #top .section p {
+        font-size: 1.2rem;
+    }
+    #mid .section p, #mid-next .section p, #mid-next-after .section p, #bottom .section p {
+        font-size: 1rem;
+    }
 }
-
-@media screen and (min-width: "920px") {
-    #top h1 {
-        font-size: 4rem;
+@media screen and (max-width: 800px){
+    #top .section p {
+        font-size: 1.1rem;
+    }
+    #mid .section p, #mid-next .section p, #mid-next-after .section p, #bottom .section p {
+        font-size: .9rem;
+    }
+    .portfolio-item {
+        width: 40%;
+    }
+}
+@media screen and (max-width: 650px){
+    #top .section p {
+        font-size: 1rem;
+    }
+    .portfolio-item {
+        width: 80%;
+        margin: 7px 2rem;
+    }
+    .portfolio-item p {
+        font-size: .8rem;
+    }
+    #top .section, #mid .section, #mid-next .section, #mid-next-after .section {
+        max-width: 80%;
+        padding: 2rem 1rem;
+    }
+    #mid-next .section {
+        max-width: 92%;
+    }
+    #mid, #mid-next, #mid-next-after {
+        padding-top: 11vh;
+    }
+    .collapser {
+        margin: 2rem 1rem;
     }
 }

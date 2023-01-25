@@ -45,11 +45,11 @@ h1, h2, h3, h4, h5 p {
 #top, #mid, #mid-next, #mid-next-after {
     position: relative;
     min-width: 100vw;
-    min-height: 100vh;
     height: 100%;
     width: 100%;
     z-index: 9;
-    height: 100%;
+    height: 100vh;
+    min-height: 600px;
 }
 .top-cover, .mid-cover, .mid-next-cover, .mid-next-after-cover, .bottom-cover {
     position: relative;
@@ -59,7 +59,7 @@ h1, h2, h3, h4, h5 p {
     padding-top: 20vh;
 }
 #mid, #mid-next, #mid-next-after {
-    padding-top: 15vh;
+    padding-top: 11vh;
 }
 #top h1 {
     font-size: 5rem;
@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5 p {
 #top .section p {
     font-size: 1.5rem;
 }
-#mid .section p, #mid-next .section p {
+#mid .section p, #mid-next .section p, #mid-next-after .section p, #bottom .section p {
     font-size: 1.1rem;
 }
 .primary-btn {
@@ -131,7 +131,7 @@ h1, h2, h3, h4, h5 p {
 }
 .portfolio-item {
     display: inline-block;
-    width: 30%;
+    width: 80%;
     padding: 1rem;
     border-radius: 11px;
     cursor: pointer;
