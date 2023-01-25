@@ -5,78 +5,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/media.css">
     <title>Claud Watari</title>
 </head>
 <body>
-    <div id="container">
-        <div id="top">
-            <h1>Claud Watari</h1>
-            <section class="section">
-                <p>
-                    Software Developer experienced in&ensp;{&ensp;'NodeJs', 'Django', 'Laravel', 'Dart'&ensp;}
-                </p>
-            </section>
-            <section class="section">
-                <p>
-                    I work mostly in backend, with fluency in relational databases and cloud&ensp;{&ensp;'AWS', 'GCP', 'Heroku'&ensp;}
-                </p>
-            </section>
-            <!-- <a href="#mid" class="primary-btn">More</a> -->
-        </div>
-        <div id="mid">
-            <section class="section">
-                <p>
-                    With over <span id="yrs"></span> years of professional experience, I have demonstrated abilities to not only work with, 
-                    but also to lead engineering teams
-                </p>
-            </section>
-            <section class="section">
-                <p>
-                    Currently working in the Fintech industry, building scalable &amp; friendly solutions for digital wallets, 
-                    money transfer, deposits & withdrawals, combined with different mobile money applications and banks.
-                </p>
-            </section>
-            <section class="section">
-                <p>
-                    I also recently started being active in Open Source contribution, working on an email protocol called 'nemp', which 
-                    incorporates all the old features of email, and adds new features like decentralization, video/ voice etc.
-                </p>
-            </section>
-        </div>
-        <div id="mid-next">
-            <section id = "gallery-container" class="section">
-                <div class="gallery-row">
-                    <img src="./assets/images/claud2.png" alt="" class="img">
-                    <img src="./assets/images/claud4.png" alt="" class="img">
-                    <img src="./assets/images/claud1.png" alt="" class="img">
-                    <img src="./assets/images/claud5.png" alt="" class="img">
-                    <img src="./assets/images/claud8.png" alt="" class="img">
-                    <img src="./assets/images/claud6.png" alt="" class="img">
-                </div>
-            </section>
-        </div>
-    </div>
-    <div id="mid-next-after">
-        <section id = "portfolio-container" class="section">
-            <p>
-                A sample of personal projects I have built
-            </p><br/><br/>
-            <div id="portfolio-items">
-
+    <div id="container" style="display: none;">
+        <div class="top-cover">
+            <p id="top-msg" style="display: none;" class="p"></p>
+            <button class = 'collapser' id = 'collapse-top'>&#10095;</button>
+            <div id="top">
+                <h1>Claud Watari</h1>
+                <section class="section">
+                    <p>
+                        Software Developer experienced in&ensp;{&ensp;'NodeJs', 'Django', 'Laravel', 'Dart'&ensp;}
+                    </p>
+                </section>
+                <section class="section">
+                    <p>
+                        I work mostly in backend, with fluency in relational databases and cloud&ensp;{&ensp;'AWS', 'GCP', 'Heroku'&ensp;}
+                    </p>
+                </section>
+                <!-- <a href="#mid" class="primary-btn">More</a> -->
             </div>
-        </section>
+        </div>
+        <div class="mid-cover">
+            <p id="mid-msg" style="display: none;" class="p"></p>
+            <button class = 'collapser' id = 'collapse-mid'>&#10095;</button>
+            <div id="mid" style = "display: none;">
+                <section class="section">
+                    <p>
+                        With over <span id="yrs"></span> years of professional experience, I have demonstrated abilities to not only work with, 
+                        but also to lead engineering teams
+                    </p>
+                </section>
+                <section class="section">
+                    <p>
+                        Currently working in the Fintech industry, building scalable &amp; friendly solutions for digital wallets, 
+                        money transfer, deposits & withdrawals, combined with different mobile money applications and banks.
+                    </p>
+                </section>
+                <section class="section">
+                    <p>
+                        I also recently started being active in Open Source contribution, working on an email protocol called 'nemp', which 
+                        incorporates all the old features of email, and adds new features like decentralization, video/ voice etc.
+                    </p>
+                </section>
+            </div>
+        </div>
+        <div class="mid-next-cover">
+            <p id="mid-next-msg" style="display: none;" class="p"></p>
+            <button class = 'collapser' id = 'collapse-mid-next'>&#10095;</button>
+            <div id="mid-next" style = "display: none;">
+                <section id = "gallery-container" class="section">
+                    <div class="gallery-row">
+                        <img src="./assets/images/claud2.png" alt="" class="img">
+                        <img src="./assets/images/claud4.png" alt="" class="img">
+                        <img src="./assets/images/claud1.png" alt="" class="img">
+                        <img src="./assets/images/claud5.png" alt="" class="img">
+                        <img src="./assets/images/claud8.png" alt="" class="img">
+                        <img src="./assets/images/claud6.png" alt="" class="img">
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="mid-next-after-cover">
+            <p id="mid-next-after-msg" style="display: none;" class="p"></p>
+            <button class = 'collapser' id = 'collapse-mid-next-after'>&#10095;</button>
+            <div id="mid-next-after" style = "display: none;">
+                <section id = "portfolio-container" class="section">
+                    <p>
+                        A sample of personal projects I have built
+                    </p><br/><br/>
+                    <div id="portfolio-items"></div>
+                </section>
+            </div>
+        </div>
+        <div class="bottom-cover">
+            <p id="bottom-msg" style="display: none;" class="p"></p>
+            <button class = 'collapser' id = 'collapse-bottom'>&#10095;</button>
+            <div id="bottom" style = "display: none;">
+                <section id = "contacts-container" class="section">
+                    <p><strong>Location:</strong> Nairobi, works remotely</p>
+                    <p><strong>Email:</strong>  <a href = 'mailto:claudwatari95@gmailcom' target="_blank">claudwatari95@gmail.com</a></p>
+                    <p><strong>Tel/ Whatsapp/ Telegram:</strong> <a href = 'tel:+254705724562' target="_blank">+254705724562</a></p>
+                    <p><strong>Github:</strong> <a href = 'https://github.com/claudwatari95' target="_blank">https://github.com/claudwatari95</a></p>
+                    <p><strong>LinkedIn:</strong> <a href = 'https://github.com/claudwatari95' target="_blank">https://linkedin.com/in/claud-watari</a></p>
+                    <p class="copyright">&copy; Claud Watari, <span id="current"></span></p>            
+                </section>
+            </div>
+        </div>
     </div>
-</div>
-    <div id="bottom">
-        <section id = "contacts-container" class="section">
-            <p><strong>Location:</strong> Nairobi, works remotely</p>
-            <p><strong>Email:</strong>  <a href = 'mailto:claudwatari95@gmailcom' target="_blank">claudwatari95@gmail.com</a></p>
-            <p><strong>Tel/ Whatsapp/ Telegram:</strong> <a href = 'tel:+254705724562' target="_blank">+254705724562</a></p>
-            <p><strong>Github:</strong> <a href = 'https://github.com/claudwatari95' target="_blank">https://github.com/claudwatari95</a></p>
-            <p><strong>LinkedIn:</strong> <a href = 'https://github.com/claudwatari95' target="_blank">https://linkedin.com/in/claud-watari</a></p>
-        </section>
-    </div>
-</div>
+    <div id="loading" style="display: block;"></div>
+    <button id="reload-btn" style="display: none;">Reload page</button>
     <script src="./assets/js/main.js"></script>
 </body>
 </html>

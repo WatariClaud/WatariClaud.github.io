@@ -8,6 +8,7 @@
 }
 html {
     scroll-behavior: smooth;
+    transition: all 1s;
 }
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -15,7 +16,7 @@ body {
     background-color: aliceblue;
     overflow-x: hidden;
 }
-#top::before, #mid::before, #mid-next-after::before {
+#top::before, #mid::before, #mid-next-after::before, #loading::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -32,7 +33,7 @@ body {
 h1, h2, h3, h4, h5 p {
     color: rgb(56, 56, 56);
 }
-#top::before {
+#top::before, #loading::before {
     background-image: url('../images/claud7.png');
 }
 #mid::before {
@@ -47,7 +48,12 @@ h1, h2, h3, h4, h5 p {
     min-height: 100vh;
     height: 100%;
     width: 100%;
-    z-index: 1;
+    z-index: 9;
+    height: 100%;
+}
+.top-cover, .mid-cover, .mid-next-cover, .mid-next-after-cover, .bottom-cover {
+    position: relative;
+    z-index: 9;
 }
 #top {
     padding-top: 20vh;
@@ -113,6 +119,7 @@ h1, h2, h3, h4, h5 p {
     width: 100vw;
     margin:0 auto;
     padding: 2rem;
+    padding-bottom: 1rem;
     background-color: rgb(50, 50, 50);
 }
 #bottom p {
@@ -137,4 +144,49 @@ h1, h2, h3, h4, h5 p {
 }
 .item-title {
     font-weight: 800;
+}
+#loading {
+    display: none;
+}
+.c {
+    font-size: 5rem;
+    text-align: center;
+    margin-top: 40vh;
+}
+.c_ {
+    text-align: center;
+}
+#reload-btn {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border: 1px solid rgb(142, 142, 254);
+    background-color: rgb(142, 142, 254);
+    border-radius: 11px;
+    opacity: 0.9;
+    margin: 2rem 1rem;
+    z-index: 9;
+    cursor: pointer;
+    padding: 1rem;
+}
+.copyright {
+    text-align: center;
+    font-size: .8rem;
+    margin-top: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.collapser {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 2rem 3rem;
+    transform: rotate(90deg);
+    font-size: 1rem;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    z-index: 99;
+}
+.p {
+    margin: 1rem 1rem 0 1rem;
 }

@@ -1,0 +1,11 @@
+@media screen and (min-width = "920px") {
+    #top h1 {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (min-width: "920px") {
+    #top h1 {
+        font-size: 4rem;
+    }
+}
