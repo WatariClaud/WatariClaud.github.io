@@ -34,6 +34,7 @@
     #top .section, #mid .section, #mid-next .section, #mid-next-after .section {
         max-width: 80%;
         padding: 2rem 1rem;
+        min-height: 600px;
     }
     #mid-next .section {
         max-width: 92%;
