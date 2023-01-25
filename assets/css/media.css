@@ -34,7 +34,7 @@
     #top .section, #mid .section, #mid-next .section, #mid-next-after .section {
         max-width: 80%;
         padding: 2rem 1rem;
-        min-height: 600px;
+        min-height: 600p;
     }
     #mid-next .section {
         max-width: 92%;
@@ -44,5 +44,23 @@
     }
     .collapser {
         margin: 2rem 1rem;
+    }
+    .img {
+        position: relative;
+        margin: 0 auto;
+        display: inline-block;
+        max-width: 400px;
+        cursor: pointer;
+        width: 90%;
+        height: 220px;
+        margin-left: 5vw;
+    }
+    .img:hover {
+        width: 100%;
+        max-width: 340px;
+        max-height: 430px;
+    }
+    .img-h {
+        display: none;
     }
 }
