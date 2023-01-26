@@ -8,7 +8,6 @@
 }
 html {
     scroll-behavior: smooth;
-    transition: all 1s;
 }
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -50,6 +49,7 @@ h1, h2, h3, h4, h5 p {
     z-index: 9;
     height: 100%;
     min-height: 100vh;
+    animation: fader 2s ease-in-out;
 }
 .top-cover, .mid-cover, .mid-next-cover, .mid-next-after-cover, .bottom-cover {
     position: relative;
@@ -149,7 +149,7 @@ h1, h2, h3, h4, h5 p {
     display: none;
 }
 .c {
-    font-size: 5rem;
+    font-size: 2rem;
     text-align: center;
     margin-top: 40vh;
 }
@@ -179,7 +179,7 @@ h1, h2, h3, h4, h5 p {
     position: absolute;
     top: 0;
     right: 0;
-    margin: 2rem 3rem;
+    margin: 1.2rem 2.2rem;
     transform: rotate(90deg);
     font-size: 1rem;
     cursor: pointer;
@@ -189,4 +189,7 @@ h1, h2, h3, h4, h5 p {
 }
 .p {
     margin: 1rem 1rem 0 1rem;
+}
+.vh {
+    display: none;
 }

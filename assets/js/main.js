@@ -11,24 +11,13 @@
     let loading = document.querySelector('#loading');
     let container = document.querySelector('#container');
     let current = document.querySelector('#current');
-    let collapse_top = document.querySelector('#collapse-top');
-    let collapse_mid = document.querySelector('#collapse-mid');
-    let collapse_mid_next = document.querySelector('#collapse-mid-next');
-    let collapse_mid_next_after = document.querySelector('#collapse-mid-next-after');
-    let collapse_bottom = document.querySelector('#collapse-bottom');
     current.textContent = this_year;
-    let top = document.querySelector('#top');
-    let mid = document.querySelector('#mid');
-    let mid_next = document.querySelector('#mid-next');
-    let mid_next_after = document.querySelector('#mid-next-after');
-    let bottom = document.querySelector('#bottom');
-    let reload_btn = document.querySelector('#reload-btn');
     loading.classList.add('c');
-    let loading_text = 'Loading';
+    let loading_text = 'Loading..';
     loading.textContent = loading_text;
-    let i = 0, j = 0;
-    let response = false;
-    let remote = ((url) => {
+    let i = 0, j = 0, d = 0, response = false, c = 0, k = 0, done = false;
+    let remote = ((url, counter) => {
+        // if(counter === 1) return response = false;
         fetch(url).then((data) => {
             return response =  true;
         }).catch((error) => {
@@ -39,70 +28,112 @@
         });
         return;
     });
+    function load_data(self_count) {
+        if(self_count === 1) {
+            console.log('loading info...');
+            document.querySelector('#mid').classList.remove('vh');
+            document.querySelector('#mid').style.display = 'block';
+        }
+        if(self_count === 2) {
+            console.log('loading gallery...');
+            document.querySelector('#mid-next').classList.remove('vh');
+            document.querySelector('#mid-next').style.display = 'block';
+        }
+        if(self_count === 3) {
+            console.log('loading projects...');
+            document.querySelector('#mid-next-after').classList.remove('vh');
+            document.querySelector('#mid-next-after').style.display = 'block';
+        }
+        if(self_count === 4) {
+            console.log('loading contacts...\n\n');
+            document.querySelector('#bottom').classList.remove('vh');
+            document.querySelector('#bottom').style.display = 'block';
+            document.querySelector('#reload-btn').style.display = 'block';
+            console.log('all done');
+            clearInterval(j);
+            if(document.querySelector('#e')) document.querySelector('#e').remove();
+            done = true;
+        }
+        return true;
+    }
     let int = () => {
-        remote('https://github.com');
-        loading_text = 'Loading';
-        return j = setInterval(() => {
+        remote('https://jsonplaceholder.typicode.com');
+        loading_text = 'Loading..';
+        j = setInterval(() => {
             i ++;
             loading.textContent = loading_text += '.'
             if(i % 3 === 0) {
                 if(!response) {
-                    loading.style.fontSize = '2rem';
                     loading.innerHTML = `Connection error, check your internet<br/><button class = 'primary-btn' id = 'reload'>Retry</button`;
-                    console.log('connection error');
                     document.querySelector('#reload').addEventListener('click', () => {
-                        window.location.reload();
+                        i = 0;
+                        int();
                     });
-                    clearTimeout(j);
-                    return console.log('failed from here...');
+                    clearInterval(j);
+                    return console.log('connection error');;
                 }
                 else {
                     loading.style.display = 'none';
                     console.log('loading intro....');
                     container.style.display = 'block';
-                    top.style.display = 'block';
-                    console.log('intro loaded\n\n')
-                    let c = 0;
-                    let d = setInterval(() => {
+                    document.querySelector('#top').style.display = 'block';
+                    console.log('intro loaded\n\n');
+                    let error_message = `
+                        <div id = 'e' class = 'c_'><br/><br/><br/>
+                        <p>Fetching content....</p><br/><br/>
+                        </div>
+                    `;
+                    if(document.querySelector('#e')) {}
+                    else document.body.innerHTML += error_message;
+                    d = setInterval(() => {
                         c ++;
                         try {
-                            if(c === 1) {
-                                console.log('loading info...')
-                                mid.style.display = 'block';
-                                reload_btn.style.display = 'block';
+                            if(!done) {
+                                remote('https://jsonplaceholder.typicode.com', c);
+                                if(!response) throw new Error('....oops, something happened');
+                                load_data(c);
                             }
-                            if(c === 2) {
-                                console.log('loading gallery...')
-                                mid_next.style.display = 'block';
-                            }
-                            if(c === 3) {
-                                console.log('loading projects...')
-                                mid_next_after.style.display = 'block';
-                            }
-                            if(c === 4) {
-                                console.log('loading contacts...\n\n')
-                                bottom.style.display = 'block';
-                                console.log('all done')
-                                clearTimeout(d)
+                            else {
+                                c = 0;
+                                clearInterval(d);
+                                clearInterval(j);
                             }
                         }
                         catch(e) {
-                            console.log('interrupted....');
+                            console.log('interrupted at count', c, '\n\n');
+                            // console.log(e);
                             let error_message = `
-                                <br/><br/>
-                                <div class = 'c_'>
+                                <div id = 'e' class = 'c_'><br/><br/>
                                 <p>could not load data....</p><br/>
-                                <button class = 'primary-btn' id = 'reload'>Retry</button>
+                                <button class = 'primary-btn' id = 'retry'>Retry</button>
                                 </div>
                             `;
-                            document.body.innerHTML += error_message;
-                            document.querySelector('#reload').addEventListener('click', () => {
-                                window.location.reload();
+                            if(document.querySelector('#e')) {
+                                if(document.querySelector('#e').getElementsByTagName('p')[0].textContent.includes('Fetching content')) {
+                                    document.querySelector('#e').remove();
+                                    document.body.innerHTML += error_message;
+                                }
+                            }
+                            else document.body.innerHTML += error_message;
+                            document.querySelector('#retry').addEventListener('click', () => {
+                                console.log('recovering from error at count', c, '\n\n');
+                                error_message = `
+                                    <div id = 'e' class = 'c_'><br/><br/><br/>
+                                    <p>Retrying to fetch....</p><br/><br/>
+                                    </div>
+                                `;
+                                document.querySelector('#e').remove();
+                                document.body.innerHTML += error_message;
+                                k = setInterval(() => {
+                                    load_data(c);
+                                    c ++;
+                                }, 1500);
                             });
-                            clearTimeout(d);
+                            clearInterval(d);
                         }
-                    }, 1000);
-                    clearTimeout(j);
+                        clearInterval(j);
+                        clearInterval(k);
+                    }, 1500);
                 }
             }
         }, 1000);
@@ -144,86 +175,91 @@
         item.innerHTML += `<p class = 'item-title'>${projects[project].title}</p><br/><p class = 'item-description'>${projects[project].description}</p>`;
         projects_div.append(item);
     }
-    reload_btn.addEventListener('click', () => {
-        window.location.reload();
-    });
-    collapse_top.addEventListener('click', () => {
-        if(top.style.display === 'block') {
-            document.querySelector('#top-msg').textContent = 'Expand top section';
-            document.querySelector('#top-msg').style.display = 'block';
-            document.querySelector('#top-msg').style.height = '60px';
-            document.querySelector('#top-msg').style.borderBottom = '1px solid gray';
-            top.style.display = 'none';
-            mid.style.marginTop = '60px';
-         } else {
-            document.querySelector('#top-msg').textContent = 'Collapse';
-            document.querySelector('#top-msg').style.display = 'none';
-            top.style.display = 'block';
-            mid.style.marginTop = '0';
-         }
-    });
-    collapse_mid.addEventListener('click', () => {
-        if(mid.style.display === 'block') {
-            document.querySelector('#mid-msg').textContent = 'Expand info section';
-            document.querySelector('#mid-msg').style.display = 'block';
-            document.querySelector('#mid-msg').style.height = '60px';
-            document.querySelector('#mid-msg').style.borderBottom = '1px solid gray';
-            mid.style.display = 'none';
-            mid_next.style.marginTop = '60px';
-         } else {
-            document.querySelector('#mid-msg').textContent = 'Collapse';
-            document.querySelector('#mid-msg').style.display = 'none';
-            mid.style.display = 'block';
-            mid_next.style.marginTop = '0';
-         }
-    });
-    collapse_mid_next.addEventListener('click', () => {
-        if(mid_next.style.display === 'block') {
-            document.querySelector('#mid-next-msg').textContent = 'Expand gallery section';
-            document.querySelector('#mid-next-msg').style.display = 'block';
-            document.querySelector('#mid-next-msg').style.height = '60px';
-            document.querySelector('#mid-next-msg').style.borderBottom = '1px solid gray';
-            mid_next.style.display = 'none';
-            mid_next_after.style.marginTop = '60px';
-         } else {
-            document.querySelector('#mid-next-msg').textContent = 'Collapse';
-            document.querySelector('#mid-next-msg').style.display = 'none';
-            mid_next.style.display = 'block';
-            mid_next_after.style.marginTop = '0';
-         }
-    });
-    collapse_mid_next_after.addEventListener('click', () => {
-        if(mid_next_after.style.display === 'block') {
-            document.querySelector('#mid-next-after-msg').textContent = 'Expand projects section';
-            document.querySelector('#mid-next-after-msg').style.display = 'block';
-            document.querySelector('#mid-next-after-msg').style.height = '60px';
-            document.querySelector('#mid-next-after-msg').style.borderBottom = '1px solid gray';
-            mid_next_after.style.display = 'none';
-            bottom.style.marginTop = '60px';
-         } else {
-            document.querySelector('#mid-next-after-msg').textContent = 'Collapse';
-            document.querySelector('#mid-next-after-msg').style.display = 'none';
-            mid_next_after.style.display = 'block';
-            bottom.style.marginTop = '0';
-         }
-    });
-    collapse_bottom.addEventListener('click', () => {
-        let new_sector = document.createElement('div');
-        new_sector.setAttribute('id', 'placeholder');
-        new_sector.style.height = '100px';
-        if(bottom.style.display === 'block') {
-            document.querySelector('#bottom-msg').textContent = 'Expand contacts section';
-            document.querySelector('#bottom-msg').style.display = 'block';
-            document.querySelector('#bottom-msg').style.height = '60px';
-            document.querySelector('#bottom-msg').style.borderBottom = '1px solid gray';
-            bottom.style.display = 'none';
-            document.body.append(new_sector);
-         } else {
-            document.querySelector('#bottom-msg').textContent = 'Collapse';
-            document.querySelector('#bottom-msg').style.display = 'none';
-            bottom.style.display = 'block';
-            new_sector = document.querySelector('#placeholder');
-            new_sector.remove(new_sector);
-         }
-    });
-})()
+    let top = document.querySelector('#top');
+    let mid = document.querySelector('#mid');
+    let mid_next_after = document.querySelector('#mid-next-after');
+    let bottom = document.querySelector('#bottom');
+})();
+
+function reload() {
+    return window.location.reload();
+}
+function toggle_top() {
+    if(document.querySelector('#top').style.display === 'block') {
+        document.querySelector('#top-msg').textContent = 'Expand top section';
+        document.querySelector('#top-msg').style.display = 'block';
+        document.querySelector('#top-msg').style.height = '60px';
+        document.querySelector('#top-msg').style.borderBottom = '1px solid gray';
+        document.querySelector('#top').style.display = 'none';
+        document.querySelector('#mid').style.marginTop = '30px';
+     } else {
+        document.querySelector('#top-msg').textContent = 'Collapse';
+        document.querySelector('#top-msg').style.display = 'none';
+        document.querySelector('#top').style.display = 'block';
+        document.querySelector('#mid').style.marginTop = '0';
+     }
+}
+function toggle_mid() {
+    if(document.querySelector('#mid').style.display === 'block') {
+        document.querySelector('#mid-msg').textContent = 'Expand info section';
+        document.querySelector('#mid-msg').style.display = 'block';
+        document.querySelector('#mid-msg').style.height = '60px';
+        document.querySelector('#mid-msg').style.borderBottom = '1px solid gray';
+        document.querySelector('#mid').style.display = 'none';
+        document.querySelector('#mid-next').style.marginTop = '60px';
+     } else {
+        document.querySelector('#mid-msg').textContent = 'Collapse';
+        document.querySelector('#mid-msg').style.display = 'none';
+        document.querySelector('#mid').style.display = 'block';
+        document.querySelector('#mid-next').style.marginTop = '0';
+     }
+}
+function toggle_mid_next() {    
+    if(document.querySelector('#mid-next').style.display === 'block') {
+        document.querySelector('#mid-next-msg').textContent = 'Expand gallery section';
+        document.querySelector('#mid-next-msg').style.display = 'block';
+        document.querySelector('#mid-next-msg').style.height = '60px';
+        document.querySelector('#mid-next-msg').style.borderBottom = '1px solid gray';
+        document.querySelector('#mid-next').style.display = 'none';
+        document.querySelector('#mid-next-after').style.marginTop = '60px';
+     } else {
+        document.querySelector('#mid-next-msg').textContent = 'Collapse';
+        document.querySelector('#mid-next-msg').style.display = 'none';
+        document.querySelector('#mid-next').style.display = 'block';
+        document.querySelector('#mid-next-after').style.marginTop = '0';
+     }
+}
+function toggle_mid_next_after() {
+    if(document.querySelector('#mid-next-after').style.display === 'block') {
+        document.querySelector('#mid-next-after-msg').textContent = 'Expand projects section';
+        document.querySelector('#mid-next-after-msg').style.display = 'block';
+        document.querySelector('#mid-next-after-msg').style.height = '60px';
+        document.querySelector('#mid-next-after-msg').style.borderBottom = '1px solid gray';
+        document.querySelector('#mid-next-after').style.display = 'none';
+        document.querySelector('#bottom').style.marginTop = '60px';
+    } else {
+        document.querySelector('#mid-next-after-msg').textContent = 'Collapse';
+        document.querySelector('#mid-next-after-msg').style.display = 'none';
+        document.querySelector('#mid-next-after').style.display = 'block';
+        document.querySelector('#bottom').style.marginTop = '0';
+    }
+}
+function toggle_bottom() {
+    let new_sector = document.createElement('div');
+    new_sector.setAttribute('id', 'placeholder');
+    new_sector.style.height = '100px';
+    if(document.querySelector('#bottom').style.display === 'block') {
+        document.querySelector('#bottom-msg').textContent = 'Expand contacts section';
+        document.querySelector('#bottom-msg').style.display = 'block';
+        document.querySelector('#bottom-msg').style.height = '60px';
+        document.querySelector('#bottom-msg').style.borderBottom = '1px solid gray';
+        document.querySelector('#bottom').style.display = 'none';
+        document.body.append(new_sector);
+     } else {
+        document.querySelector('#bottom-msg').textContent = 'Collapse';
+        document.querySelector('#bottom-msg').style.display = 'none';
+        bottom.style.display = 'block';
+        new_sector = document.querySelector('#placeholder');
+        new_sector.remove(new_sector);
+     }
+}

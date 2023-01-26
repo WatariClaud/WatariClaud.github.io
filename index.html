@@ -12,7 +12,7 @@
     <div id="container" style="display: none;">
         <div class="top-cover">
             <p id="top-msg" style="display: none;" class="p"></p>
-            <button class = 'collapser' id = 'collapse-top'>&#10095;</button>
+            <button class = 'collapser' id = 'collapse-top' onclick="toggle_top()">&#10095;</button>
             <div id="top">
                 <h1>Claud Watari</h1>
                 <section class="section">
@@ -30,8 +30,8 @@
         </div>
         <div class="mid-cover">
             <p id="mid-msg" style="display: none;" class="p"></p>
-            <button class = 'collapser' id = 'collapse-mid'>&#10095;</button>
-            <div id="mid" style = "display: none;">
+            <button class = 'collapser' id = 'collapse-mid' onclick="toggle_mid()">&#10095;</button>
+            <div id="mid" class = "vh">
                 <section class="section">
                     <p>
                         With over <span id="yrs"></span> years of professional experience, I have demonstrated abilities to not only work with, 
@@ -54,8 +54,8 @@
         </div>
         <div class="mid-next-cover">
             <p id="mid-next-msg" style="display: none;" class="p"></p>
-            <button class = 'collapser' id = 'collapse-mid-next'>&#10095;</button>
-            <div id="mid-next" style = "display: none;">
+            <button class = 'collapser' id = 'collapse-mid-next' onclick="toggle_mid_next()">&#10095;</button>
+            <div id="mid-next"  class = "vh">
                 <section id = "gallery-container" class="section">
                     <div class="gallery-row">
                         <img src="./assets/images/claud2.png" alt="" class="img">
@@ -70,8 +70,8 @@
         </div>
         <div class="mid-next-after-cover">
             <p id="mid-next-after-msg" style="display: none;" class="p"></p>
-            <button class = 'collapser' id = 'collapse-mid-next-after'>&#10095;</button>
-            <div id="mid-next-after" style = "display: none;">
+            <button class = 'collapser' id = 'collapse-mid-next-after' onclick="toggle_mid_next_after()">&#10095;</button>
+            <div id="mid-next-after"  class = "vh">
                 <section id = "portfolio-container" class="section">
                     <p>
                         A sample of personal projects I have built
@@ -82,8 +82,8 @@
         </div>
         <div class="bottom-cover">
             <p id="bottom-msg" style="display: none;" class="p"></p>
-            <button class = 'collapser' id = 'collapse-bottom'>&#10095;</button>
-            <div id="bottom" style = "display: none;">
+            <button class = 'collapser' id = 'collapse-bottom' onclick="toggle_bottom()">&#10095;</button>
+            <div id="bottom"  class = "vh">
                 <section id = "contacts-container" class="section">
                     <p><strong>Location:</strong> Nairobi, works remotely</p>
                     <p><strong>Email:</strong>  <a href = 'mailto:claudwatari95@gmailcom' target="_blank">claudwatari95@gmail.com</a></p>
@@ -96,7 +96,7 @@
         </div>
     </div>
     <div id="loading" style="display: block;"></div>
-    <button id="reload-btn" style="display: none;">Reload page</button>
+    <button id="reload-btn" style="display: none;" onclick="reload()">Reload page</button>
     <script src="./assets/js/main.js"></script>
 </body>
 </html>
