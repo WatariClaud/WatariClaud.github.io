@@ -22,8 +22,8 @@
             return response =  true;
         }).catch((error) => {
             if(error.message === 'Failed to fetch') {
-                // return response = false;
-                return response = true;
+                return response = false;
+                // return response = true;
             };
         });
         return;
