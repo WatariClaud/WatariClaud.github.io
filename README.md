@@ -1,9 +1,5 @@
 Codebase for portfolio webpage.
 
-Self hosted on Github Pages.
+[Live link](https://watariclaud.info/)
 
 Written in HTML/JS & CSS, no templates.
-
-#### TODO:
-
-Create responsive styling (only designed for large screens at this commit)
