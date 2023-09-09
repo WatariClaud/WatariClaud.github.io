@@ -23,9 +23,9 @@
         }).catch((error) => {
             if(error.message === 'Failed to fetch') {
                 return response = false;
-                // return response = true;
             };
         });
+        // return response = true;
         return;
     });
     function load_data(self_count) {
@@ -142,21 +142,28 @@
     let item;
     let projects = [
         {
+            "title": "Smart Text Generator",
+            "description": "A chatbot using GPT Turbo 3.5 (NodeJs, Handlebars) built as part of internal coding challenges for workplace teams.",
+            "image": "blank",
+            "link": "https://github.com/claudwatari95/"
+        },
+        {
             "title": "Car Booking API",
-            "description": "Backend service for a car booking application written in python. Runs on postgres. Currently under development",
+            "description": "Backend service for a car booking application written in python. Runs on postgres.",
             "image": "blank"
         },
         {
             "title": "Quick Credit",
-            "description": "Mobile loan application built for the Andela bootcamp challenge, back in 2019",
+            "description": "Mobile loan application built for the Andela bootcamp challenge, back in 2019. Written using NodeJs for backend and React for the frontend",
             "image": "blank"
         },
         {
             "title": "Teamwork",
-            "description": "Employee social site built for the BuildForSDG program by Andela and Google Africa",
+            "description": "Employee social site built for the BuildForSDG program by Andela and Google Africa, for which I was a team lead. NodeJs backend, Angular frontend",
             "image": "blank"
         },
     ];
+    let mid_next_after = document.querySelector('#mid-next-after');
     if(projects.length === 0) return projects_div.innerHTML = `<div class = 'portfolio-item'><p>No projects available</p></div`;
     for(let project = 0; project < projects.length; project++) {
         if(project === 3) {
@@ -167,18 +174,22 @@
             let br = document.createElement('br');
             projects_div.append(br, item);
             mid_next_after.style.height = mid_next_after.style.height.split('vh')[0] + '60px';
-            break
+            break;
         };
+        const link = document.createElement('a');
+        link.setAttribute('href', projects[project].link || '#');
+        link.setAttribute('target', '_blank');
+        link.style.textDecoration = 'none';
         item = document.createElement('div');
         item.setAttribute('class', 'portfolio-item');
         if(projects[project].image === 'blank') item.style.backgroundColor = 'rgb(0, 0, 0)';
         item.innerHTML += `<p class = 'item-title'>${projects[project].title}</p><br/><p class = 'item-description'>${projects[project].description}</p>`;
-        projects_div.append(item);
+        projects[project].link && projects[project].link !== "" ?
+         link.appendChild(item)
+        :
+        null;
+        projects[project].link && projects[project].link !== "" ? projects_div.appendChild(link) : projects_div.append(item);
     }
-    let top = document.querySelector('#top');
-    let mid = document.querySelector('#mid');
-    let mid_next_after = document.querySelector('#mid-next-after');
-    let bottom = document.querySelector('#bottom');
 })();
 
 function reload() {
@@ -262,4 +273,9 @@ function toggle_bottom() {
         new_sector = document.querySelector('#placeholder');
         new_sector.remove(new_sector);
      }
+}
+
+function view_more() {
+    console.log('building portfolio...');
+    return;
 }

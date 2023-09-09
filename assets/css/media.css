@@ -16,8 +16,8 @@
     #mid .section p, #mid-next .section p, #mid-next-after .section p, #bottom .section p {
         font-size: .9rem;
     }
-    .portfolio-item {
-        width: 40%;
+    #mid-next-after .section {
+        max-width: 90%;
     }
 }
 @media screen and (max-width: 650px){
@@ -65,5 +65,8 @@
     }
     #loading {
         font-size: 1rem;
+    }
+    #mid .section p, #mid-next .section p, #mid-next-after .section p, #bottom .section p {
+        font-size: .8rem;
     }
 }
