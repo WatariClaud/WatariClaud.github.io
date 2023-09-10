@@ -145,7 +145,7 @@
             "title": "Smart Text Generator",
             "description": "A chatbot using GPT Turbo 3.5 (NodeJs, Handlebars) built as part of internal coding challenges for workplace teams.",
             "image": "blank",
-            "link": "https://github.com/claudwatari95/"
+            "link": "https://github.com/ClaudWatari95/smart-text-generator"
         },
         {
             "title": "Car Booking API",
