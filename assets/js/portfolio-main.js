@@ -9,9 +9,9 @@ const portfolio_list = [
   },
   {
     "title": "Smart Text Generator",
-    "description": "A chatbot built on GPT4 OpenAI model as part of team coding challenges",
+    "description": "A chatbot built on OpenAI GPT4 model as part of team coding challenges",
     "image": "https://raw.githubusercontent.com/ClaudWatari95/claudwatari95.github.io/main/assets/images/chatbot.png",
-    "link": "https://smart-text-generator.up.railway.app/chat",
+    "link": "https://smart-text-generator-production.up.railway.app/chat",
     "tags": ["nodejs", "handlebars.js", "openAI"]
   },
   {
@@ -20,6 +20,13 @@ const portfolio_list = [
     "image": "https://raw.githubusercontent.com/ClaudWatari95/claudwatari95.github.io/main/assets/images/notes.png",
     "link": "https://github.com/ClaudWatari95/notes_app",
     "tags": ["flutter", "nodejs", "mongodb"]
+  },
+  {
+    "title": "JavaScript Calculator",
+    "description": "A basic calculator app created for the Andela pre-bootcamp interview (2019",
+    "image": "https://raw.githubusercontent.com/ClaudWatari95/claudwatari95.github.io/main/assets/images/calculator.png",
+    "link": "https://watariclaud.info/JavaScript-Calculator/",
+    "tags": ["es6", "javascript", "html/css"]
   },
 ];
 
