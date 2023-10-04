@@ -3,37 +3,19 @@ const portfolio_list = [
   {
     "title": "ProLearnerHub",
     "description": "An eLearning Platform where anyone can learn the fundamentals of Computer Science",
-    "image": "./assets/images/code.png",
+    "image": "../assets/images/code.png",
     "link": "https://prolearnerhub.tech",
   },
   {
     "title": "Smart Text Generator",
     "description": "A chatbot built on GPT4 OpenAI model as part of team coding challenges",
-    "image": "./assets/images/chatbot.png",
+    "image": "../assets/images/chatbot.png",
     "link": "https://smart-text-generator-production.up.railway.app/chat",
   },
   {
     "title": "Notes App",
     "description": "A notes tracking native app as part of team coding challenges",
-    "image": "./assets/images/notes.png",
-    "link": "https://github.com/ClaudWatari95/notes_app",
-  },
-  {
-    "title": "Notes App",
-    "description": "A notes tracking native app as part of team coding challenges",
-    "image": "./assets/images/notes.png",
-    "link": "https://github.com/ClaudWatari95/notes_app",
-  },
-  {
-    "title": "Notes App",
-    "description": "A notes tracking native app as part of team coding challenges",
-    "image": "./assets/images/notes.png",
-    "link": "https://github.com/ClaudWatari95/notes_app",
-  },
-  {
-    "title": "Notes App",
-    "description": "A notes tracking native app as part of team coding challenges",
-    "image": "./assets/images/notes.png",
+    "image": "../assets/images/notes.png",
     "link": "https://github.com/ClaudWatari95/notes_app",
   },
 ];
