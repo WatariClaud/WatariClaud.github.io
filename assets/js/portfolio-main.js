@@ -23,10 +23,17 @@ const portfolio_list = [
   },
   {
     "title": "JavaScript Calculator",
-    "description": "A basic calculator app created for the Andela pre-bootcamp interview (2019",
+    "description": "A basic calculator app created for the Andela pre-bootcamp interview (2019)",
     "image": "https://raw.githubusercontent.com/ClaudWatari95/claudwatari95.github.io/main/assets/images/calculator.png",
     "link": "https://watariclaud.info/JavaScript-Calculator/",
     "tags": ["es6", "javascript", "html/ css"]
+  },
+  {
+    "title": "Weather App",
+    "description": "A basic weather application created for the Facebook/Andela DevC project (2019)",
+    "image": "https://raw.githubusercontent.com/ClaudWatari95/claudwatari95.github.io/main/assets/images/weather.png",
+    "link": "https://weatherapp-byclaud-970ac.web.app/",
+    "tags": ["es6", "javascript", "openweathermap-api"]
   },
 ];
 
