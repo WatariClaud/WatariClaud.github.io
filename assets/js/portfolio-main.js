@@ -26,7 +26,7 @@ const portfolio_list = [
     "description": "A basic calculator app created for the Andela pre-bootcamp interview (2019",
     "image": "https://raw.githubusercontent.com/ClaudWatari95/claudwatari95.github.io/main/assets/images/calculator.png",
     "link": "https://watariclaud.info/JavaScript-Calculator/",
-    "tags": ["es6", "javascript", "html/css"]
+    "tags": ["es6", "javascript", "html/ css"]
   },
 ];
 
