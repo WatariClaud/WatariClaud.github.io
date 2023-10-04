@@ -276,6 +276,6 @@ function toggle_bottom() {
 }
 
 function view_more() {
-    console.log('building portfolio...');
+    window.location.replace("/portfolio");
     return;
 }
