@@ -33,7 +33,7 @@ const portfolio_list = [
     "description": "A basic weather application created for the Facebook/Andela DevC project (2019)",
     "image": "https://raw.githubusercontent.com/ClaudWatari95/claudwatari95.github.io/main/assets/images/weather.png",
     "link": "https://weatherapp-byclaud-970ac.web.app/",
-    "tags": ["es6", "javascript", "openweathermap-api"]
+    "tags": ["javascript", "firebase", "openweathermap-api"]
   },
 ];
 
