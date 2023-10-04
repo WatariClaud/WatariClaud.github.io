@@ -176,6 +176,7 @@
             item = document.createElement('button');
             item.setAttribute('onclick', 'view_more()');
             item.setAttribute('class', 'primary-btn');
+            item.style.marginLeft = 0;
             item.textContent = 'More';
             let br = document.createElement('br');
             projects_div.append(br, item);
