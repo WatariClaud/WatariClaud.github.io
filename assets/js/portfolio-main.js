@@ -11,7 +11,7 @@ const portfolio_list = [
     "title": "Smart Text Generator",
     "description": "A chatbot built on GPT4 OpenAI model as part of team coding challenges",
     "image": "https://raw.githubusercontent.com/ClaudWatari95/claudwatari95.github.io/main/assets/images/chatbot.png",
-    "link": "https://smart-text-generator-production.up.railway.app/chat",
+    "link": "smart-text-generator.up.railway.app/chat",
     "tags": ["nodejs", "handlebars.js", "openAI"]
   },
   {
