@@ -25,8 +25,9 @@
         font-size: 1rem;
     }
     .portfolio-item {
-        width: 80%;
+        width: 100%;
         margin: 7px 2rem;
+        margin-left: 0;
     }
     .portfolio-item p {
         font-size: .8rem;
@@ -39,8 +40,11 @@
     #mid-next .section {
         max-width: 92%;
     }
-    #mid, #mid-next, #mid-next-after {
+    #mid, #mid-next {
         padding-top: 11vh;
+    }
+    #mid-next-aftert {
+        padding-top: 4vh;
     }
     .collapser {
         margin: 2rem 1rem;
