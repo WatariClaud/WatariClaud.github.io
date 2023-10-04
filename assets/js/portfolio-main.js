@@ -47,9 +47,7 @@ portfolio_list.forEach(item => {
           <p class="item-description">${item.description}</p>
           <img src="${item.image}" class="portfolio-item-image"/>
           <br/><br/>
-          <p class="item-description">
-            ${item.tags.map((tag) =>  "<span class='tag'>" + tag + " </span>").join('')}
-          </p>
+          ${item.tags.map((tag) =>  "<span class='tag'>" + tag + " </span>").join('')}
         </div>
       </a>
     </div>
