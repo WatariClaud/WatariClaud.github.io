@@ -142,6 +142,12 @@
     let item;
     let projects = [
         {
+            "title": "ProLearnerHub",
+            "description": "An eLearning Platform intended to make technology skills openly available for everyone.",
+            "image": "blank",
+            "link": "https://prolearnerhub.tech"
+        },
+        {
             "title": "Smart Text Generator",
             "description": "A chatbot using GPT Turbo 3.5 (NodeJs, Handlebars) built as part of internal coding challenges for workplace teams.",
             "image": "blank",
