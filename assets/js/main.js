@@ -276,6 +276,6 @@ function toggle_bottom() {
 }
 
 function view_more() {
-    window.location.replace("/portfolio");
+    window.location.assign("/portfolio");
     return;
 }
