@@ -3,20 +3,23 @@ const portfolio_list = [
   {
     "title": "ProLearnerHub",
     "description": "An eLearning Platform where anyone can learn the fundamentals of Computer Science",
-    "image": "https://img.freepik.com/free-vector/digital-global-connection-network-technology-background_1017-23324.jpg",
+    "image": "https://raw.githubusercontent.com/ClaudWatari95/claudwatari95.github.io/main/assets/images/code.png",
     "link": "https://prolearnerhub.tech",
+    "tags": ["react", "nodejs", "postgres", "cloud"]
   },
   {
     "title": "Smart Text Generator",
     "description": "A chatbot built on GPT4 OpenAI model as part of team coding challenges",
-    "image": "https://img.freepik.com/premium-photo/system-artificial-intelligence-chatgpt-ai-technology-smart-robot-ai-chat-application-software-robot-application-chat-gpt-generative-ai_39665-590.jpg",
+    "image": "https://raw.githubusercontent.com/ClaudWatari95/claudwatari95.github.io/main/assets/images/chatbot.png",
     "link": "https://smart-text-generator-production.up.railway.app/chat",
+    "tags": ["nodejs", "handlebars.js", "openAI"]
   },
   {
     "title": "Notes App",
-    "description": "A notes tracking native app as part of team coding challenges",
-    "image": "https://img.freepik.com/free-vector/business-infographic-with-pinned-notes_23-2147505469.jpg",
+    "description": "A notes tracking native mobile app built as part of team coding challenges",
+    "image": "https://raw.githubusercontent.com/ClaudWatari95/claudwatari95.github.io/main/assets/images/notes.png",
     "link": "https://github.com/ClaudWatari95/notes_app",
+    "tags": ["flutter", "nodejs", "mongodb"]
   },
 ];
 
@@ -29,6 +32,10 @@ portfolio_list.forEach(item => {
           <br/>
           <p class="item-description">${item.description}</p>
           <img src="${item.image}" class="portfolio-item-image"/>
+          <br/><br/>
+          <section class="tags">
+            ${item.tags.map((tag) =>  "<span class='tag'>" + tag + " </span>").join('')}
+          </section>
         </div>
       </a>
     </div>
