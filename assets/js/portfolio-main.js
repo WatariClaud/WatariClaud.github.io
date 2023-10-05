@@ -15,18 +15,18 @@ const portfolio_list = [
     "tags": ["nodejs", "handlebars.js", "openAI"]
   },
   {
-    "title": "Vehicle Parking",
-    "description": "A parking space tracking app made on behalf of a student (2021)",
-    "image": "https://raw.githubusercontent.com/ClaudWatari95/claudwatari95.github.io/main/assets/images/parking.png",
-    "link": "",
-    "tags": ["php", "mysql", "heroku"]
-  },
-  {
     "title": "Notes App",
     "description": "A notes tracking native mobile app built as part of team coding challenges",
     "image": "https://raw.githubusercontent.com/ClaudWatari95/claudwatari95.github.io/main/assets/images/notes.png",
     "link": "https://github.com/ClaudWatari95/notes_app",
     "tags": ["flutter", "nodejs", "mongodb"]
+  },
+  {
+    "title": "Vehicle Parking",
+    "description": "A parking space tracking app made on behalf of a student (2021)",
+    "image": "https://raw.githubusercontent.com/ClaudWatari95/claudwatari95.github.io/main/assets/images/parking.png",
+    "link": "",
+    "tags": ["php", "mysql", "heroku"]
   },
   {
     "title": "JavaScript Calculator",
