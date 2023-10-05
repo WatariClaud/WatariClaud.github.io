@@ -47,7 +47,7 @@ const portfolio_list = [
 portfolio_list.forEach(item => {
   div.innerHTML += `
     <div  class = "portfolio-item card">
-      <a href="${item.link === "" ? "#" : item.link}" target="_blank">
+      <a href="${item.link === "" ? "#" : item.link}" target="${item.link === "" ? "" : "_blank"}">
         <div>
           <h3>${item.title}</h3>
           <br/>
